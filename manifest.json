@@ -2,5 +2,12 @@
     "name": "fatphoBLOCK",
     "version": "1.0",
     "description": "Block fatphobic content",
-    "manifest_version": 2
+    "manifest_version": 2,
+    "content_scripts": [
+      {
+      "matches": ["*://*/*"],
+      "js": ["background.js"],
+      "run_at":"document_end"
+    }
+  ]
   }

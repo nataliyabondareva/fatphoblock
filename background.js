@@ -1,13 +1,11 @@
 let enabled = true;
-let blockList = ['eight'];
+let blockList = ['oga'];
 
-function fideAndHide () {
+function findAndHide () {
     document.querySelectorAll('*').forEach(node => {
         node.childNodes.forEach(child => {
           if (child.nodeType === 3) {
-            child.nodeValue.includes('Yoga') ? console.log(child) : null
-          //  child.nodeValue = 'strong body' : null
-          //child.nodeValue = child.nodeValue.replace('fat', '');
+            child.nodeValue.includes('oga') ? console.log(child.nodeValue) : null
          }
         });
       })
