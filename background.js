@@ -1,14 +1,16 @@
 let enabled = true;
-let blockList = ['oga'];
+let blockList = ['oga', 'OGA'];
+let linksToBlock = []
 
-function findAndHide () {
-    document.querySelectorAll('*').forEach(node => {
-        node.childNodes.forEach(child => {
-          if (child.nodeType === 3) {
-            child.nodeValue.includes('oga') ? console.log(child.nodeValue) : null
-         }
-        });
-      })
+function findAndHide() {
+  let matches = Array.from(document.getElementsByTagName("ytd-video-renderer"));
+  for (let match of matches) {
+    console.log(match);
+    if(match.querySelector("#video-title > yt-formatted-string").innerHTML.includes('oga'))
+    {
+      match.remove();
+    }
+  }
 }
 
 window.onload = findAndHide();
